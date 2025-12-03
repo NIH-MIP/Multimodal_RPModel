@@ -5,7 +5,7 @@
 [Benjamin D. Simon](https://www.linkedin.com/in/benjamin-dabora-simon/), Stephanie A. Harmon, Katie M. Merriman, Jesse Tetreault, Ömer T. Esengür, Hunter Stecko, Enis C. Yilmaz, Lei Clifton, Anshul Thakur, Zoë Blake, Maria J. Merino, Julie Y. An, Jamie Marko, Yan Mee Law, Sandeep Gurram, David Clifton, Bradford J. Wood, Peter L. Choyke, Peter A Pinto, Baris Turkbey
 
 ## Abstract
-# Purpose
+### Purpose
 To develop a multimodal deep learning-based AI algorithm and investigate its ability to predict BCR of PCa after radical prostatectomy (RP) using MRI and clinical data.
 ### Methods
 PCa patients (n = 311) underwent prostate MRI prior to RP between January 2008 and December 2018. For each patient, CAPRA-S was calculated. Quantitative imaging features were extracted using methods developed in a previous study. Test set results were assessed independently for each model in the study, using cross-validation of the training set to tune hyperparameters and select features. DeLong's test compared AUROC curve values, and log-rank tests compared BCR-free survival curves.
@@ -15,7 +15,13 @@ Across all patients, the AUROC of the automated multimodal model was 0.74, compa
 Development of a multimodal model using quantitative imaging features and clinical covariates revealed that an automated multimodal AI approach most effectively predicts BCR in PCa patients. Based on AUROC and the ability to differentiate between BCR-free survival outcomes with statistical significance in intermediate risk patients, this model outperforms the gold standard postsurgical CAPRA-S risk scores.
 
 
-## Instructions for Reproducing Automated EPE Detection
-Detailed instructions and code to reproduce this model and run inference on external data will be uploaded after publication.
+## Instructions for Reproducing BCR Prediction Model
+1. Follow the instructions for previously developed [prostate cancer deep learning lesion detection](https://github.com/Project-MONAI/research-contributions/tree/main/prostate-mri-lesion-seg).
+2. Use requirements.txt to set up a conda environment (conda create --name <env> --file requirements.txt).
+3. Run ContourVariance_wReduction.py to create variance masks.
+4. Run AutomatedEPE_dataCollection_wSorting.py to calculated radiomics features and save them.
+5. Run Training.py and Testing.py to train and test the features and model.
 
-The content of this repository and its associated publication does not necessarily reflect the views or policies of the Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government. 
+Please contact benjamin.simon@nih.gov with any inquiries regarding running this code. Please cite [the paper](https://www.sciencedirect.com/science/article/pii/S0899707125001792) when using any component from this repository.
+
+The content of this repositiory its associated publication does not necessarily reflect the views or policies of the Department of Health and Human Services, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government. 
